@@ -23,7 +23,7 @@ cat << EOF > /usr/local/src/routes.sh
 # Adding the route for via the new router and deleting the old one
 ip route add default via $NEWGATEWAYIP dev $IFNAME
 ip route del default via $CURRENTGATEWAYIP dev $IFNAME
-sed -i "s/.*nameserver.*/nameserver $NEWDNS" /etc/resolv.conf
+sed -i "s/.*nameserver.*/nameserver $NEWDNS/" /etc/resolv.conf
 EOF
 chmod a+x /usr/local/src/routes.sh
 # End of file with the new route
